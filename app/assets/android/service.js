@@ -1,16 +1,18 @@
 Ti.API.info(" ======= STARTIGN SERVICE ======== ");
 
 start();
-
+ 
 function testNotification(){
 	var packageName= Ti.App.id;
 	var className = 'uh.tutorial.notification.TutorialnotificationActivity';
+	var activity = Ti.Android.currentActivity;
 	 
 	// Intent object to launch the application
 	var intent = Ti.Android.createIntent({
 	    action: Ti.Android.ACTION_MAIN
 	    , className : className
 	    , packageName: packageName
+	    // , flags: Ti.Android.FLAG_ACTIVITY_NEW_TASK | Ti.Android.FLAG_ACTIVITY_MULTIPLE_TASK
 	});
 	 
 	intent.flags |=
@@ -27,9 +29,9 @@ function testNotification(){
 	
 	
 	
-	var activity = Ti.Android.currentActivity;
+	
 	var pending = Ti.Android.createPendingIntent({
-		activity:activity,
+		// activity:activity,
 	    intent : intent,
 	    type : Ti.Android.PENDING_INTENT_FOR_ACTIVITY,
 	    // updates only extras, triggering newintent
@@ -41,7 +43,7 @@ function testNotification(){
 	    , contentTitle : "Title"
 	    , contentText : "Text"
 	    , tickerText : "tickerText"
-	    , when : new Date()
+	    // , when : new Date()
 	    , icon: Ti.App.Android.R.drawable.appicon
 	    , flags : Ti.Android.ACTION_DEFAULT | Ti.Android.FLAG_AUTO_CANCEL | Ti.Android.FLAG_SHOW_LIGHTS
 	    , defaults: Ti.Android.DEFAULT_LIGHTS
@@ -53,7 +55,7 @@ function testNotification(){
 
 function start(){
 	Ti.API.info("test notification");
-	testNotification();
+	testNotification(); 
 	
 	setTimeout(function(){
 		start();

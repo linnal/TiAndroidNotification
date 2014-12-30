@@ -29,15 +29,18 @@ function checkForPendingIntent(){
 	var platformTools = require('bencoding.android.tools').createPlatform();
 	var isInForeground = platformTools.isInForeground();
 	if(isInForeground){
-		Ti.API.info("CHECK INTENT");
+		log("CHECK INTENT");
 		var activity = Ti.Android.currentActivity;
 		var intent = activity.intent;
-		Ti.API.info(JSON.stringify(intent));
+		log(JSON.stringify(intent));
 		 
 		if (intent.hasExtra('payload')) { 
-			Ti.API.info("*******found " + intent.getStringExtra('payload')); 
+			log("*******found " + intent.getStringExtra('payload')); 
 		}
 	}
+	
+	 
+	log("PAYLOAD " + Alloy.Globals.payload);
 }
 
 function log(msg){
