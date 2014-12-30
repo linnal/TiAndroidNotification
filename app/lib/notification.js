@@ -86,9 +86,9 @@ module.exports.launch = function(options) {
         , contentText : options.contentText || ''
         , tickerText : options.tickerText || ''
         , when : options.when || new Date()
-        , icon: Ti.App.Android.R.drawable.appicon
-        , flags : Ti.Android.ACTION_DEFAULT | Ti.Android.FLAG_AUTO_CANCEL | Ti.Android.FLAG_SHOW_LIGHTS
-        , defaults: Ti.Android.DEFAULT_LIGHTS
+        , icon: options.icon || Ti.App.Android.R.drawable.appicon
+        , flags : options.flags || Ti.Android.ACTION_DEFAULT | Ti.Android.FLAG_AUTO_CANCEL | Ti.Android.FLAG_SHOW_LIGHTS
+        , defaults: options.defaults || Ti.Android.DEFAULT_LIGHTS
     });
 
     notificationCounter++;
