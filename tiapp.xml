@@ -10,7 +10,7 @@
     <icon>appicon.png</icon>
     <fullscreen>false</fullscreen>
     <navbar-hidden>false</navbar-hidden>
-    <analytics>true</analytics>
+    <analytics>false</analytics>
     <guid>9423c114-683a-498a-a94a-fad1fbdc988a</guid>
     <property name="ti.ui.defaultunit" type="string">dp</property>
     <ios>
@@ -52,7 +52,7 @@
         <theme>default</theme>
     </mobileweb>
     <modules>
-        <module platform="android">bencoding.android.tools</module>
+<!--        <module platform="android">bencoding.android.tools</module> -->
     </modules>
     <deployment-targets>
         <target device="android">true</target>
@@ -62,7 +62,7 @@
         <target device="mobileweb">false</target>
         <target device="tizen">false</target>
     </deployment-targets>
-    <sdk-version>3.3.0.GA</sdk-version>
+    <sdk-version>3.4.1.GA</sdk-version>
     <plugins>
         <plugin version="1.0">ti.alloy</plugin>
     </plugins>
